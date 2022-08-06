@@ -1,5 +1,5 @@
 <?php
-include_once("geralDAO.php");
+include_once("./models/geralDAO.php");
 class con
 {
     public function colocar($a)
@@ -7,14 +7,20 @@ class con
         if ($this->checarExistente(explode(";", $a[1])[0]) != 0)
             return;
         $t = "";
-        foreach (explode(";", $a[1]) as $i)
+        foreach (explode(",", $a[1]) as $i)
         {
             if ($t != "")
                 $t .= ", ";
             $t .= "'$i'";
         
         }
-        $t = "insert into cel values (" . getTotal("cel") . ", " . $t . ",0,0,1)";
+        $t = "insert into cel values (" . getTotal("cel") . ", " . $t . ",0,1)";
+        echo $t;
+        // inserir($t);
+    }
+    public function tirar($a)
+    {
+        $t = "delete from cel where id='" . $a["id"] . "'";
         echo $t;
         inserir($t);
     }

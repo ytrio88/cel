@@ -6,13 +6,13 @@ create table cel (
     id int primary key not null,
     nome varchar(20) not null,
     marca int not null,
-    comprimento int not null,
-    largura int not null,
-    altura int not null,
-    disposicaocam varchar(10) not null
+    comprimento int,
+    largura int ,
+    altura int ,
+    disposicaocam varchar(10) ,
     totalpel int ,
     totalcase int ,
-    status int not null
+    status int 
 
 ) engine=myisam;
 

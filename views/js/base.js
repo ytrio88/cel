@@ -10,9 +10,9 @@ function i()
     let a = 0
     let b = a => ""
     let l = troca(JSON.parse(lista))
-    t = "<div class='linha th'><div>Modelo</div><div>Marca</div><div>Tamanho(mm)</div><div>Tamanho(pol)</div><div>Total</div><div></div></div>"
+    t = "<div class='linha th'><div>Modelo</div><div>Marca</div><div>Total Pelicula</div><div>Total Capinha</div><div></div></div>"
     for (let i of l)
-        t += "<div class='linha'><div>" + i.nome + "</div><div>" + "Samsung,Motorola,Iphone,Xiaomi,LG".split(",")[i.marca] + "</div><div>" + i.comprimento + "x" + i.largura + "x" + i.altura +"</div><div>" + f1(i.comprimento) + "x" + f1(i.largura) + "x" + f1(i.altura) +"</div><div>" + i.total + "</div><form id='f" + a + "' method='post' name='f" + a + "' class='gforms'><input type='hidden' name='id' value='" + i.id + "'><button type='button' onclick='fa(" + a++ + ")'>-</button></form></div>"
+        t += "<div class='linha'><div>" + i.nome + "</div><div>" + "Samsung,Motorola,Iphone,Xiaomi,LG".split(",")[i.marca] + "</div><div>" + i.totalpel + "</div><div>" + i.totalcase + "</div><form id='f" + a + "' method='post' name='f" + a + "' class='gforms'><input type='hidden' name='id' value='" + i.id + "'><button type='button' onclick='fa(" + a++ + ")'>-</button></form></div>"
     document.getElementById("lista").innerHTML = t
 }
 function fa(a)
@@ -32,6 +32,7 @@ function s()
 {
     console.log(document.activeElement)
     let v = document.getElementById("1").value
+<<<<<<< HEAD
     let b = a => {
         let c = ""
         if (a.length == 1)
@@ -59,6 +60,26 @@ function s()
         t += i
     }
     document.getElementById("1").value = t
+=======
+    // let b = a => {
+    //     let c = ""
+    //     if (a.length == 1)
+    //         return a + ".0"
+    //     let b = a.split("")
+    //     for (let i = 0; i < b.length; i++) 
+    //     {
+    //         if (i == b.length - 1)
+    //             c += "."
+    //         c += b[i]
+    //     }
+    //     return c
+    // }
+    console.log(v.substring(v.indexOf(",")+1))
+    for (let i of v.substring(v.indexOf(",")+1).split(","))
+        if (isNaN(parseInt(i)))
+            console.log(i)
+    document.getElementById("1").value = v
+>>>>>>> 9b8f5622bf883d55d1156f3cfce423ce61ffa37b
     // document.form.submit()
 }
 function troca(l)

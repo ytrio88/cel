@@ -7,16 +7,11 @@ class con
         if ($this->checarExistente(explode(";", $a[1])[0]) != 0)
             return;
         $t = "";
-        foreach (explode(",", $a[1]) as $i)
-        {
-            if ($t != "")
-                $t .= ", ";
-            $t .= "'$i'";
-        
-        }
-        $t = "insert into cel values (" . getTotal("cel") . ", " . $t . ",0,1)";
+        // var_dump($a);;
+        $a = explode(",", $a[1]);
+        $t = "insert into cel values (" . getTotal("cel") . ",'$a[0]', $a[1],'','','','', $a[2], $a[3], 1)";
         echo $t;
-        // inserir($t);
+        inserir($t);
     }
     public function tirar($a)
     {
@@ -26,7 +21,7 @@ class con
     }
     public function loadAll()
     {
-        $q = "select * from cel";
+        $q = "select nome,marca,totalcase,totalpel from cel";
         
         $result = extrair($q);	
         // echo $query;
@@ -35,7 +30,7 @@ class con
         {
             if ($t != "") $t .= ",";
             $t .= "{";
-            foreach (lerColunas("cel") as $i)
+            foreach (explode(",", "nome,marca,totalcase,totalpel") as $i)
                 $t .= '"' . $i . '":"' . $row[$i] . '",';
             $t .= '"a":"a"';
             $t .= "}";

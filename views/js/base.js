@@ -9,7 +9,7 @@ function i()
     }
     let a = 0
     let l = troca(JSON.parse(lista))
-    t = "<div class='linha th'><div>Modelo</div><div>Marca</div><div>Total Pelicula</div><div>Total Capinha</div><div></div></div>"
+    t = "<div class='linha th'><div>Modelo</div><div>Marca</div><div>Peliculas(P,B,D)</div><div>Capinhas</div><div></div></div>"
     for (let i of l)
         t += "<div class='linha'><div>" + i.nome + "</div><div>" + "Samsung,Motorola,Iphone,Xiaomi,LG".split(",")[i.marca] + "</div><div>" + i.totalpel + "</div><div>" + i.totalcase + "</div><form id='f" + a + "' method='post' name='f" + a + "' class='gforms'><input type='hidden' name='id' value='" + i.id + "'><button type='button' onclick='fa(" + a++ + ")'>-</button></form></div>"
     document.getElementById("lista").innerHTML = t
@@ -31,35 +31,6 @@ function s()
 {
     console.log(document.activeElement)
     let v = document.getElementById("1").value
-<<<<<<< HEAD
-    let b = a => {
-        let c = ""
-        if (a.length == 1)
-            return a + ".0"
-        if (a.indexOf(".") != -1)
-            return a
-        let b = a.split("")
-        for (let i = 0; i < b.length; i++) 
-        {
-            if (i == b.length - 1)
-                c += "."
-            c += b[i]
-        }
-        return c
-    }
-    v= v.split(",")
-    v[2] = b(v[2])
-    v[3] = b(v[3])
-    v[4] = b(v[4])
-    let t = ""
-    for (let i of v)
-    {
-        if (t != "")
-            t += ","
-        t += i
-    }
-    document.getElementById("1").value = t
-=======
     // let b = a => {
     //     let c = ""
     //     if (a.length == 1)
@@ -78,8 +49,7 @@ function s()
         if (isNaN(parseInt(i)))
             console.log(i)
     document.getElementById("1").value = v
->>>>>>> 9b8f5622bf883d55d1156f3cfce423ce61ffa37b
-    // document.form.submit()
+    document.form.submit()
 }
 function troca(l)
 {

@@ -4,7 +4,7 @@ class con
 {
     public function colocar($a)
     {
-        if ($this->checarExistente(explode(";", $a[1])[0]) != 0)
+        if ($this->checarExistente(explode(",", $a[1])[0]) != 0)
             return;
         $t = "";
         // var_dump($a);;

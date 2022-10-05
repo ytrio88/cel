@@ -8,7 +8,6 @@ function i()
         return a
     }
     let a = 0
-    let b = a => ""
     let l = troca(JSON.parse(lista))
     t = "<div class='linha th'><div>Modelo</div><div>Marca</div><div>Total Pelicula</div><div>Total Capinha</div><div></div></div>"
     for (let i of l)

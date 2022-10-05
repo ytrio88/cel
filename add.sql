@@ -1,7 +1,7 @@
 create database cel;
 use cel;
 
--- drop table cel;
+-- -- -- drop table cel;
 create table cel (
     id int primary key not null,
     nome varchar(20) not null,

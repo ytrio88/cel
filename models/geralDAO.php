@@ -106,10 +106,10 @@
 	}
 	function getTotal($tabela)
 	{
-		$query = "select count(id) as total from $tabela where status = 1";
+		$query = "select max(id) as total from $tabela";
 		$result = extrair($query);
 		while ($row = $result->fetch_assoc())
-			return intval($row["total"]);
+			return intval($row["total"])+1;
 	}
 	function checkWords($s)
 	{		

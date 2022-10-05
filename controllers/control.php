@@ -4,10 +4,11 @@ class con
 {
     public function colocar($a)
     {
+        if (strpos($a[1], ",") == false)
+            $a[1] .= ",0,0,0";
         if ($this->checarExistente(explode(",", $a[1])[0]) != 0)
             return;
         $t = "";
-        // var_dump($a);;
         $a = explode(",", $a[1]);
         $t = "insert into cel values (" . getTotal("cel") . ",'$a[0]', $a[1],'','','','', $a[2], $a[3], 1)";
         echo $t;
@@ -15,13 +16,13 @@ class con
     }
     public function tirar($a)
     {
-        $t = "delete from cel where id='" . $a["id"] . "'";
+        $t = "delete from cel where id='" . $a . "'";
         echo $t;
         inserir($t);
     }
     public function loadAll()
     {
-        $q = "select nome,marca,totalcase,totalpel from cel";
+        $q = "select id,nome,marca,totalcase,totalpel from cel";
         
         $result = extrair($q);	
         // echo $query;
@@ -30,7 +31,7 @@ class con
         {
             if ($t != "") $t .= ",";
             $t .= "{";
-            foreach (explode(",", "nome,marca,totalcase,totalpel") as $i)
+            foreach (explode(",", "id,nome,marca,totalcase,totalpel") as $i)
                 $t .= '"' . $i . '":"' . $row[$i] . '",';
             $t .= '"a":"a"';
             $t .= "}";

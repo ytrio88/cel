@@ -8,6 +8,6 @@ select {width: calc(100% );}
 .grid input, .grid select, input {width: calc(100% - 10px);}
 .size2a {grid-template-columns: auto 150px;}
 .size4a {grid-template-columns: auto auto auto 150px;}
-.linha {display: grid; grid-template-columns: auto auto  200px 120px  40px; padding: 5px;}
+.linha {display: grid; grid-template-columns: auto 150px  200px 120px  40px; padding: 5px;}
 .th {background-color: rgb(102, 104, 255); color: white}
 .gforms {margin: 0;}

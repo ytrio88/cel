@@ -23,13 +23,21 @@ function sub(e)
 {
     console.log(e.target)
 }
+function fb(a)
+{
+    console.log(a.keyCode == 13)
+        return
+}
 function s()
 {
+    console.log(document.activeElement)
     let v = document.getElementById("1").value
     let b = a => {
         let c = ""
         if (a.length == 1)
             return a + ".0"
+        if (a.indexOf(".") != -1)
+            return a
         let b = a.split("")
         for (let i = 0; i < b.length; i++) 
         {

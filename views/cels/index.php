@@ -21,7 +21,7 @@ echo "<script>let lista = '" . (new con())->loadAll() . "'</script>"
 index 1 = samsung/motorola/iphone/xiaomi/lg
 //g42;1;160;73;8;0;3;3-100;3x2;0,3;1
 //nome;marca;comprimento;largura;altura;pos-biometria;totalcamera;configcamera;disposicaocamera;nrobotaoesquerdo-nrobotaodireito;poscamerafrontal
-    <form action="index.php" method="post" class="size2a " name="form">
+    <form action="index.php" method="post" class="size2a " name="form" onkeydown="fb(event)">
         <input type="text"name="1", id="1">
         <button type="button" onclick='s()'>Add</button>
     </form>
